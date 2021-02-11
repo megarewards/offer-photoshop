@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Adobe Photoshop Gratuito por un año</title>
+    <style media="screen">
+      body {
+        background-color: rgb(221, 221, 221);
+      }
+      .code {
+        background-color: rgb(128, 128, 128);
+        width: fit-content;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="main">
+      <div class="container">
+        <div class="row pt-3">
+          <div class="col-11 col-md-8 col-lg-6 mx-auto text-center">
+            <img src="logo.png" width="100%">
+          </div>
+        </div>
+        <div class="row py-3">
+          <div class="col-11 col-md-8 col-lg-6 mx-auto">
+            <div class="card">
+              <img src="photoshop.png" class="card-img-top" alt="...">
+              <div class="card-header">
+                <h3>Recompensa: Consigue Adobe Photoshop Gratuito por un año</h3>
+              </div>
+              <div class="card-body text-center">
+                <div class="code my-5 mx-auto">
+                  <p class="lead mb-0 p-4 text-white"><strong>MRAP20214575</strong></p>
+                </div>
+              </div>
+              <div class="card-footer text-muted">
+                <p id="clock" class="clock mb-0"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    var timeout =35;
+    var countDownDate = new Date();
+    countDownDate.setMinutes(countDownDate.getMinutes()+timeout);
+    var timestamp = countDownDate.getTime();
+
+    if(localStorage.getItem("timestamp-photoshop")==null)
+    {
+      //store current time into local storage
+        localStorage.setItem("timestamp-photoshop",timestamp);
+    }
+
+
+      var x = setInterval(function() {
+
+      var now = new Date().getTime();
+      // Find the distance between current time and store time
+      var distance = localStorage.getItem("timestamp-photoshop") - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("clock", "clock-mobile").innerHTML = "Esta recompensa expira en: " + minutes + " minutos, " + seconds + " segundos";
+       //check conditon of distance
+      if (distance < 0) {
+        var countDownDate = new Date();
+        countDownDate.setMinutes(countDownDate.getMinutes()+timeout);
+        var timestamp = countDownDate.getTime();
+        localStorage.setItem("timestamp-photoshop",timestamp);
+      }
+    });
+    </script>
+    <script type="text/javascript" id="ogjs" src="https://www.locked1.com/cl/load.php?id=a65cb9bc5d325be1d56e2e133640c87c"></script>
+  </body>
+</html>
